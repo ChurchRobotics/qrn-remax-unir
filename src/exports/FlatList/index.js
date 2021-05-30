@@ -88,10 +88,11 @@ class FlatList extends React.Component {
         const {
             data, renderItem, onScroll, style, horizontal, scrollEnabled,
             ListEmptyComponent, ListFooterComponent, ListHeaderComponent,
-            numColumns, onEndReached, onEndReachedThreshold, onRefresh, refreshing, refreshControl
+            numColumns, onEndReached, onEndReachedThreshold, onRefresh, refreshing, refreshControl,
+            contentContainerStyle
         } = this.props
         const { scrollIntoView } = this.state
-        const contentStyle = !horizontal && numColumns > 1 ? styles.rows : styles.columns
+        const contentStyle = !horizontal && numColumns > 1 ? styles.rows : !horizontal? styles.columns: styles.rows
         return (
             <ScrollView
                 ref={r => this.scrollView = r}
@@ -110,14 +111,11 @@ class FlatList extends React.Component {
                     ListHeaderComponent && (React.isValidElement(ListHeaderComponent) ? (ListHeaderComponent) :
                         <ListHeaderComponent/>)
                 }
-                {
-                    horizontal ? this.renderListContent() :
-                        <View style={contentStyle}>
-                            {
-                                this.renderListContent()
-                            }
-                        </View>
-                }
+                <View style={StyleSheet.flatten([contentStyle, contentContainerStyle])}>
+                    {
+                        this.renderListContent()
+                    }
+                </View>
                 {
                     ListFooterComponent && (React.isValidElement(ListFooterComponent) ? (ListFooterComponent) :
                         <ListFooterComponent/>)

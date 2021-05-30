@@ -10,7 +10,7 @@
 
 const Platform = {
   OS: 'wx',
-  select: (obj: Object) => ('wx' in obj ? obj.web : obj.default),
+  select: (obj: Object) => ('wx' in obj ? obj.wx : obj.default),
   get isTesting(): boolean {
     if (process.env.NODE_DEV === 'test') {
       return true;

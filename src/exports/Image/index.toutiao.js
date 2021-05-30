@@ -17,7 +17,7 @@ import RemaxImage from './RemaxImage'
 import applyLayout from '../../modules/applyLayout'
 import applyNativeMethods from '../../modules/applyNativeMethods'
 import filterSupportedProps from './filterSupportedProps';
-import { getImageInfo } from '@remax/wechat';
+import { getImageInfo } from '@remax/toutiao';
 import { guid } from '../../modules/gidConduct';
 
 export type ImageProps = {

@@ -9,6 +9,7 @@ target/
 .project
 .classpath
 
+lib/
 # idea ignore
 .idea/
 *.ipr

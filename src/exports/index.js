@@ -81,3 +81,14 @@ export { default as ViewPropTypes } from './ViewPropTypes'
 
 export { default as Alert } from './Alert'
 
+export { default as NativeModules } from './NativeModules';
+
+export { default as Pressable } from './Pressable';
+
+export { default as PanResponder } from './PanResponder';
+
+export { default as I18nManager } from './I18nManager';
+
+export { default as Keyboard } from './Keyboard';
+
+export { default as KeyboardAvoidingView } from './KeyboardAvoidingView';
