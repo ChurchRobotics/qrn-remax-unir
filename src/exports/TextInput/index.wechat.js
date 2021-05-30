@@ -3,7 +3,7 @@
  * @date 2020.07
  */
 import * as React from 'react'
-import { Input as RInput } from '@remax/one';
+import { Input as RInput, Textarea as RTextarea } from '@remax/one';
 import StyleSheet from '../StyleSheet'
 
 const SupportedProps = {
@@ -138,6 +138,9 @@ class TextInput extends React.Component{
   }
 
   render() {
+    if (this.props.numberOfLines && this.props.numberOfLines > 1) {
+      return  <RTextarea {...this._handleSupportedProps()}/>;
+    }
     return <RInput {...this._handleSupportedProps()} />
   }
 }

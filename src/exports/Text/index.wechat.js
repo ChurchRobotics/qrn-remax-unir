@@ -87,5 +87,7 @@ class Text extends React.Component{
       children={children} />
   }
 }
-
+Text.propTypes = {
+  style: ()=>{}
+}
 export default applyLayout(applyNativeMethods(Text))
