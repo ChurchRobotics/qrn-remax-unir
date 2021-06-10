@@ -37,7 +37,7 @@ export default class Alert {
         }
         let onConfirm = ()=> null
         let onCancel = ()=> null
-        if(buttons.length === 1){
+        if(buttons[0]){
             const { text, onPress } = buttons[0]
             if(text){
                 supportedProps.confirmText = text.substring(0,4);
@@ -45,7 +45,8 @@ export default class Alert {
             if(onPress){
                 onConfirm = onPress;
             }
-        }else if ( buttons.length >= 2 ){
+        }
+        if ( buttons[1]){
             supportedProps.showCancel = true;
             const { text, onPress } = buttons[1]
             if(text){

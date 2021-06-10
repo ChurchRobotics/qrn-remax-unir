@@ -15,10 +15,11 @@ const SupportedProps = {
   "placeholder": 'placeholder',
   "maxLength": 'maxLength',
   "defaultValue": 'defaultValue',
-  "autoFocus": 'focus',
+  // "autoFocus": 'focus',
   "secureTextEntry": 'password',
   "onSubmitEditing": 'onConfirm',
-  "onBlur": 'onBlur'
+  "onBlur": 'onBlur',
+  "bindFocus": "focus",
 }
 
 /**
@@ -134,6 +135,7 @@ class TextInput extends React.Component{
     if(_props.placeholder && _props.value && _props.value.length > 0){
       _props.placeholder = ''
     }
+    _props["adjust-position"] = true
     return _props;
   }
 
