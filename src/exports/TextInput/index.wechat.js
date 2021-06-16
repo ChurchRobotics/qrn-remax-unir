@@ -11,6 +11,7 @@ const SupportedProps = {
   "style": 'style',
   "className": 'className',
   // "value": 'value',
+  "onChange": 'onInput',
   "onChangeText": 'onInput',
   "placeholder": 'placeholder',
   "maxLength": 'maxLength',
@@ -94,8 +95,15 @@ class TextInput extends React.Component{
      * 处理输入
      */
     if(_props.onInput){
+
       const _onInput = (e) => {
-        this.props.onChangeText(e?.target?.value)
+        const _nativeEvent = {
+          eventCount: 0,
+          target: 0,
+          text: e?.target?.value
+        }
+        this.props?.onChange?.({nativeEvent: _nativeEvent})
+        this.props?.onChangeText?.(e?.target?.value)
       }
       _props.onInput = _onInput
     }
